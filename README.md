@@ -135,7 +135,7 @@ Using cast deployed locally example:
 ```
 cast send <BASICNFT_CONTRACT_ADDRESS> "mintNft(string)" "<BASICNFT_URI>" --private-key <PRIVATE_KEY>
 ```
-<br>
+
 ```
 cast send <MOODNFT_CONTRACT_ADDRESS> "mintNft()" --private-key <PRIVATE_KEY>
 ```
