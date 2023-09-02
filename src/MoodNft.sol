@@ -32,9 +32,7 @@ contract MoodNft is ERC721, Ownable {
 
     function mintNft() external {
         uint256 currentToken = s_tokenCounter;
-        s_moodUris[currentToken] = Mood.HAPPY;
         _safeMint(msg.sender, currentToken);
-
         s_tokenCounter++;
         emit NFTCreated(currentToken);
     }
@@ -48,11 +46,7 @@ contract MoodNft is ERC721, Ownable {
             revert MoodNft__OnlyOwnerCanFilpMood();
         }
 
-        if (s_moodUris[_tokenId] == Mood.HAPPY) {
-            s_moodUris[_tokenId] == Mood.SAD;
-        } else {
-            s_moodUris[_tokenId] = Mood.HAPPY;
-        }
+        s_moodUris[_tokenId] == Mood.HAPPY ? s_moodUris[_tokenId] = Mood.SAD : s_moodUris[_tokenId] = Mood.HAPPY;
 
         emit MoodFlipped(uint256(s_moodUris[_tokenId]));
     }
@@ -74,13 +68,11 @@ contract MoodNft is ERC721, Ownable {
                 Base64.encode(
                     bytes(
                         abi.encodePacked(
-                            abi.encodePacked(
-                                '{"name":"',
-                                name(),
-                                '","description":"An Nft that reflects Mood of the Owner 100% on chain!","image":"',
-                                imageUri,
-                                '","attributes":[{"trait_type":"Moodiness","value":50}]}'
-                            )
+                            '{"name":"',
+                            name(),
+                            '","description":"An Nft that reflects Mood of the Owner 100% on chain!","image":"',
+                            imageUri,
+                            '","attributes":[{"trait_type":"Moodiness","value":50}]}'
                         )
                     )
                 )
