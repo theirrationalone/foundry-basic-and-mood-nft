@@ -70,7 +70,8 @@ We talk about 3 test tiers in the video.
 2. Integration
 3. Forked
 4. Staging
-
+5. Fuzz
+   
 This repo we cover #1, #2, #3 and #5.
 
 
