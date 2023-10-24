@@ -69,8 +69,7 @@ We talk about 3 test tiers in the video.
 1. Unit
 2. Integration
 3. Forked
-
-4.Fuzz
+4. Fuzz
    
 This repo we cover #1, #2, #3 and #5.
 
